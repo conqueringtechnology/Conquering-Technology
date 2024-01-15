@@ -1,0 +1,43 @@
+-=Template=-
+Note: Is not fully working code.
+    [html]
+        {% block content %}
+            <button type="button" class="btn btn-primary" 
+            data-bs-toggle="modal" data-bs-target="#downloadModal">
+                Download Resume
+            </button>
+
+            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="downloadModalLabel">Download Status</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {% if message %}
+                                <p class="text-{{ message_type }}">{{ message }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock content %}
+        {% block script %}
+            
+            <script>
+                // Trigger download on button click
+                $(document).ready(function () {
+                    $('#downloadModal').on('show.bs.modal', function (event) {
+                        var form = document.createElement('form');
+                        form.action = "{% url 'app:app_download_resume'  %}";
+                        form.method = "POST";
+                        form.target = "_blank";  // Open in new tab
+                        $(this).find('.modal-body').append(form); // Append form to modal body
+                        form.submit();
+                    });
+                });
+            </script>
+        {% endblock script %}
+    [end]

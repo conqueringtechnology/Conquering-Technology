@@ -1,0 +1,89 @@
+/* Entire App */
+* {
+    box-sizing: border-box;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
+/* a:link, a:visited {
+    color: #C7C7C7;
+} */
+a, a:visited, a:focus, a:active, a:hover{
+    outline: none !important;
+}
+
+body {
+    background: linear-gradient(315deg, #b5bfc6 , #8b9aa5, #6b7c89, #697782, #68747e);
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Navigation Bar */
+/* Navigation Bar Brand */
+.navbar-brand {
+    font-style: oblique !important;
+    color: rgba(167, 184, 197, 1) !important;
+    text-decoration: none !important;
+    box-shadow: 0 0.125em 0.3125em rgba(167, 184, 197, 0.2), 0 0.25em 0.625em rgba(167, 184, 197, 0.15) !important;
+    padding: 0 0.3125em 0.125em 0.3125em !important;
+    /* text-shadow: 0 2px 0 rgba(0, 0, 0, 1), 0 3px 2px rgba(0, 0, 0, 0.8); */
+}
+
+/* Navigation Bar Links */
+.nav-link {
+    color: #C7C7C7 !important;
+    transition: all 0.2s linear 0s !important;
+
+}
+.nav-link:hover {
+    color: rgba(82, 160, 195,1) !important;
+}
+.nav-link:focus {
+    color: rgba(65, 108, 127, 1) !important;
+}
+.nav-link:active {
+    color: rgba(75, 146, 176, 1) !important;
+}
+.nav-link.active {
+    font-weight: bold !important;
+    border-bottom: 0.125em solid rgba(90, 175, 215, 1) !important;
+}
+
+.home__resumedownload {
+    border: solid rgba(167, 184, 197, 1) 0.125em !important;
+}
+
+/* Navbar Toggler Ul Size */
+@media (max-width: 960px) {
+    .home__navulcustom {
+        width: 33% !important;
+        text-align: center !important;
+    }
+}
+
+
+/* Custom Button */
+.app__btn{
+    background-color: rgba(82, 160, 195,1);
+    color: #ffffff;
+    border: 1px solid rgba(82, 160, 195,1);
+}
+.app__btn:hover {
+    background-color: rgba(82, 160, 195,1);
+    color: #ffffff;
+    border: 1px solid rgba(82, 160, 195,1);
+}
+.app__outlinebtn{
+    color: rgba(82, 160, 195,1);
+    color: #ffffff;
+    border-color: rgba(82, 160, 195,1);
+}
+.app__outlinebtn:hover {
+    color: rgba(82, 160, 195,1);
+    color: #ffffff;
+    border-color: rgba(82, 160, 195,1);
+}
+

@@ -1,0 +1,29 @@
+/* Miguel's Portfolio Image Container */
+.home__tagline {
+    font-style: italic;
+    color: rgba(187, 204, 217, 1) !important;
+    text-shadow: 0.125em 0.125em 0.125em rgba(0, 0, 0, 0.4), 0 0.25em 0.25em rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Miguel Rocha Portfolio Image of himself */
+.home__outerborderframe {
+    border: black solid 0.3125em !important;
+    box-shadow: inset 0em 0em 0.0625em 0.0625em #808080, inset 0em 0em 0.3125em 0.625em rgba(0,0,0,0.8) !important;
+    padding: 0.625em 0.625em 0.375em 0.625em !important;
+    background: #FFFFFF !important;
+    width: fit-content;
+}
+.home__innerborderframe {
+    border: black solid 0.15625em;
+}
+.home__innerborderframe.inview {
+    opacity: 1 !important;
+    transition: all 2s ease-in-out !important;
+}
+
+
+/* Customize Card */
+.home__card {
+    width: 30em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

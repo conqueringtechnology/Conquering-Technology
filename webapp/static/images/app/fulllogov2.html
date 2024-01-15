@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://127.0.0.1:5500/webapp/static/images/app/fulllogo.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<style type="text/css">
+			.logocontainer {
+				/* background: linear-gradient(135deg, #b5bfc6, #8b9aa5, #6b7c89, #505c66, #3c454c); */
+				background: linear-gradient(315deg, #b5bfc6 , #8b9aa5, #6b7c89, #697782, #68747e);
+				position: relative;
+				height: 280px;
+				width: 280px;
+				border: #000000 solid 1px;
+				margin: auto;
+			}
+			.t,.c {
+				font-size: 160pt;
+				color: rgba(107, 124, 137, 1.0);
+				font-family: Bookman;
+				position: absolute;
+			}
+			.t {
+				top: 12%;
+				left: 34%;
+				transform: rotate(45deg);
+				text-shadow: 0.031em 0.031em 0.0625em #000000;
+			}
+			.c {
+				top: -5.5%;
+				left: 3%;
+				text-shadow: 0.0625em 0.0625em 0.125em #000000;
+			}
+
+			.mainlogo {
+				font-size: 19pt;
+				width: 99%;
+				max-width: 100%;
+				font-style: oblique;
+				color: rgba(107, 124, 137, 1.0);
+				text-decoration: none;
+				/* text-shadow: 0.0625em 0.0625em 0.125em #000000, 0 0 1.5625em #000000, 0 0 0.3125em #000000; */
+				text-shadow: 0.0625em 0.0625em 0.125em #000000, 0 0 1.5625em #000000, 0 0 0.1em #000000;
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				transform: translate(-50%);
+				text-align: center;
+			}
+
+			a {
+				text-decoration: none;
+			}
+			a, a:visited, a:focus, a:active, a:hover{
+				outline:0 none !important;
+			}
+			</style>
+	</head>
+<body>
+	<div class="logocontainer">
+		<div class="c">C</div>
+		<div class="t">T</div>
+		<span class="mainlogo">Conquering Technology</span>
+	</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

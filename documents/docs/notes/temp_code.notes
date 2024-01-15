@@ -1,0 +1,66 @@
+-=Resume Template=-
+    [python]
+        resume_file = 'docs/pdf/miguel_rocha_resume.pdf'
+    
+        if request.method == 'POST':
+            try:
+                with open(resume_file, 'rb') as f:
+                    response = FileResponse(f, content_type='application/pdf')
+                    response['Content-Disposition'] = 'attachment; filename="miguel_rocha_resume.pdf"'
+                    return response
+            except FileNotFoundError:
+                message = 'Resume file not found.'
+                return render(request, 'resume.html', {'message': message})
+        else:
+            return render(request, 'resume.html')
+    [end]
+    [html]
+        {% extends 'base.html' %}
+        {% load static %}
+        {% block styles %}
+            <link rel="stylesheet" href="{% static "css/app_resume.css" %}">
+        {% endblock styles %}
+        {% block title%}Miguel's Resume{% endblock title%}
+        {% block content %}
+            <div class="container">
+                <h1>Miguel's Resume</h1>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" 
+            data-target="#downloadModal">
+                Download Resume
+            </button>
+            
+            <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" 
+            aria-labelledby="downloadModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="downloadModalLabel">Download Status</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            {% if message %}
+                                <p class="text-{{ message_type }}">{{ message }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%endblock%}
+        {% block script %}
+            <script>
+                // Trigger download on button click
+                $('#downloadModal').on('show.bs.modal', function (event) {
+                    form = document.createElement('form');
+                    form.action = "{% url 'download_resume' %}";
+                    form.method = "POST";
+                    form.target = "_blank";  // Open in new tab
+                    $(this).find('.modal-body').append(form); // Append form to modal body
+                    form.submit();
+                });
+            </script>
+        {% endblock script %}
+    [end]

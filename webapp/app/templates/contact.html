@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/app_contact.css" %}">
+{% endblock styles %}
+{% block title %}Contact Miguel{% endblock %}
+{% block content %}
+<!-- Miguel Rocha Contact Information -->
+<div class="container d-flex justify-content-center align-items-center">
+    <section class="d-flex flex-column align-items-center border border-2 border-dark rounded-4 p-5 m-5 resume__container">
+        <div class="text-center">
+            <h2>Contact Miguel Rocha</h2>
+            <p>Feel free to reach out to me using the information below:</p>
+        </div>
+        <address>
+            <span>Address: 814 W 26th St Scottsbluff, NE 69361</span><br>
+            <span>Mobile: <a href="tel:+" title="Miguel Rocha Mobile">(308) 225-2772</a></span><br>
+            <span>Email Miguel: <a href="mailto:miguelrocha@conqueringtechnology.com" title="Miguel Rocha Email">miguelrocha@conqueringtechnology.com</a></span><br>
+            <span>Follow Miguel On Linkedin: <a class="linkedin" title="Miguel Rocha Linkedin" href="https://www.linkedin.com/pub/miguel-rocha/35/8/649">
+                    <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Miguel Rocha's profile on LinkedIn"></a>
+            </span>
+        </address>
+    </section>
+</div>
+
+{% endblock %}

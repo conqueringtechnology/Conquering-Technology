@@ -1,0 +1,47 @@
+-=ShowFlow=-
+TODO - Add Movies, Streaming, Etc through UI.
+TODO - Only the can see your own movies.
+TODO - Allow specific movie to be viewed by others.
+TODO - Add Forgot Password
+
+After Update - 
+    Add the following to project.html
+    [html]
+        <!-- ISQA 3900 - WEB APPLICATION DEVELOPMENT -->
+        <div class="card projects__card m-2">
+            <div class="card-body">
+                <h5 class="card-title">ISQA 3900 - WEB APPLICATION DEVELOPMENT</h5>
+                <small class="text-black-50 ">Project: Django, HTML, CSS, JavaScript</small>
+                <p class="card-text">
+                    
+                </p>
+            </div>
+            <div class="d-flex justify-content-center mt-auto pb-3">
+                <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+            </div>
+        </div>
+    [end]
+
+-=Rocha Safe=-
+FIXME - RochaSafe Standalone or with Electron: Not able to register, says unauthorzied.
+FIXME - RochaSafe with Vuex: Need to fix able to start vue server. npm run serve or npm run dev
+
+After fix - 
+    Add the following to project.html
+        [html]
+            <!-- Rocha Safe -->
+            <div class="card projects__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Rocha Safe</h5>
+                    <small class="text-black-50 ">Technical Skills: Vue (Vital), Django, HTML, Bootstrap, CSS, JavaScript</small>
+                    <p class="card-text">
+                        Rocha Safe is a responsive app that a user is able to add accounts such as utilities, streaming websites, and online bills. The user is able to keep track of the account’s website’s address, their username and password for those websites, know the due dates, charges of the accounts if the charges are static month to month, and notes about the account. The app has the following features: registration, login/logout, and the user are able to create, read, update, delete accounts, search for an account, and sort the accounts.  The app was created to solve one particular problem I was having and that was keeping track of when I could cancel a streaming service to move to another streaming service. Able to track those dates was able to save money by not having multiple streaming services at one time. 
+                    </p>
+                </div>
+                <div class="d-flex justify-content-center mt-auto pb-3 ">
+                    <a href="https://" class="btn app__btn me-2" target="_blank">Visit Website</a>
+                    <a href="" class="btn app__btn" target="_blank">Visite GitHub Repo</a>
+                </div>
+            </div>
+        [end]

@@ -1,0 +1,38 @@
+###NOTE - Python File Structure
+    your_project/
+    ├── README.md  # Project overview and instructions
+    ├── requirements.txt  # List of required Python libraries
+    ├── venv/  # Virtual environment (optional)
+    ├── src/
+    │   ├── __init__.py  # Package marker for src
+    │   ├── data_science/
+    │   │   ├── __init__.py
+    │   │   ├── data_cleaning.py
+    │   │   ├── feature_engineering.py
+    │   │   ├── model_training.py
+    │   │   └── model_evaluation.py
+    │   ├── machine_learning/
+    │   │   ├── __init__.py
+    │   │   ├── classifiers.py
+    │   │   ├── regressors.py
+    │   │   └── recommenders.py
+    │   ├── automation/
+    │   │   ├── __init__.py
+    │   │   ├── data_retrieval.py
+    │   │   ├── report_generation.py
+    │   │   └── email_notifications.py
+    │   └── web/
+    │       ├── __init__.py
+    │       ├── app.py  # Main web application file (Django or Flask)
+    │       ├── views.py  # View functions for web pages
+    │       ├── models.py  # Data models (if using Django)
+    │       └── static/  # Static assets (CSS, JavaScript, images)
+    ├── data/
+    │   ├── raw/  # Raw data files
+    │   ├── processed/  # Processed data files
+    │   └── results/  # Analysis results and model outputs
+    ├── models/  # Trained machine learning models
+    ├── scripts/
+    │   ├── data_processing.py
+    │   └── model_deployment.py
+    └── tests/  # Unit tests

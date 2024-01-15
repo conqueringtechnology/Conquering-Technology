@@ -1,0 +1,15 @@
+/* Customize Card */
+.projects__card {
+    width: 30em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Scroll To Projects */
+.projects__splashscreen {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background: url("../images/app/background/technology.jpeg")  center no-repeat fixed;
+    background-size: cover;
+}

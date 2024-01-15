@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}Home - Miguel Rocha{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/app_home.css" %}">
+{% endblock styles %}
+{% block content %}
+<div class="container-fluid">
+    <!-- Main Section -->
+    <section class="d-flex justify-content-center content-section mt-4">
+        <h3 class="home__tagline">Tech isn't just a career, it's my playground.</h3>
+    </section>
+
+    <!-- Hello Section -->
+    <section class="d-flex flex-column flex-md-row align-items-center content-section my-4 mx-md-4"> 
+        <div class="home__intershipparagraph flex-grow-1 order-2 order-md-1 me-md-4 mt-sm-4">
+            <h1 class="text-center text-md-start">Hello my name is Miguel Rocha</h1>
+            <p style="color: snow">
+                As a senior at the University of Nebraska Omaha, I am currently interested in pursuing opportunities for an internship or part-time position for the upcoming summer of 2024. With a strong academic background, I am ready to apply my academic knowledge and skills acquired throughout my education journey in a real-world professional setting. My focus on business administration and management information systems has provided me with valuable insights, and I am excited about the prospect of contributing to a dynamic team. I am dedicated to try my hardest, work my hardest, and achieve my goals with making a meaningful impact and further developing my abilities in a professional environment. I am confident that my dedication, adaptability, and passion for information technology make me a valuable candidate for any challenging roles that align with my career aspirations.
+            </p>
+            <div class="d-flex justify-content-center justify-content-md-start mt-3">
+                <a href="{% url 'app:app_resume' %}" class="btn app__btn btn-lg me-4">View Resume</a>
+                <a href="{% url 'app:app_projects' %}" class="btn app__outlinebtn btn-lg me-4">View Projects</a>
+                <a href="{% url 'app:app_contact' %}" class="btn app__btn btn-lg">Contact Me</a>
+            </div>
+        </div>
+
+        <!-- Miguel Rocha Portfolio Image -->
+        <div class="home__outerborderframe img-fluid order-1 order-md-2">
+            <img class="home__innerborderframe home__inview " 
+            src="{% static 'images/app/portfolio_image.jpg' %}"  
+            alt="Miguel Rocha Portfolio Image of himself." title="Miguel Rocha Portfolio Image">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="d-flex flex-column bg-light text-dark mt-5 p-4">
+        <h1 class="text-center border-bottom mb-3">About Me</h1>
+    
+        <!-- Professional Experience Section -->
+        <h2 class="text-center fst-italic">Professional Experience:</h2>
+        <div class="d-flex flex-wrap justify-content-around mt-2">
+            <!-- Commissioner, NCBVI -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Commissioner, NCBVI</h5>
+                    <p class="card-text">
+                        In my role as Commissioner for the Nebraska Commission for the Blind and Visually Impaired (NCBVI), I have been entrusted with a diverse set of responsibilities that showcase my leadership and strategic planning abilities. My role involves extensive stakeholder engagement, fostering communication with consumers and staff.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Onsite Manager, USSTRATCOM Deterrence Diner -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Onsite Manager, USSTRATCOM Deterrence Diner</h5>
+                    <p class="card-text">
+                        As Onsite Manager at Offutt USSTRATCOM Deterrence Diner (2018-2020), I wore many hats as a leader, planner, problem-solver, and team builder. I managed the dining facility, ensuring smooth operations through strategic scheduling, budgeting, and employee development. By implementing effective procedures, I optimized staff performance and maintained a supportive environment for both staff and clientele. I led with a focus on efficiency, collaboration, and guest satisfaction, contributing significantly to the facility's success.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3 ">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Senior Technical Support, Aldelo LP -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Senior Technical Support</h5>
+                    <p class="card-text">
+                        At Aldelo LP (2005-2014), I was a bilingual support tech. I mastered the art of supporting and troubleshooting the point-of-sale and enterprise software, tackling challenges for customers worldwide in English and Spanish. From stability testing and hardware certification to account management and documentation translation, I ensured smooth operations. I extended my knowledge by training new employees, sharing my expertise through clear documentation, and even educating others about assistive tools like ZoomText and JAWS.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3 ">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Education Journey Section -->
+        <h2 class="text-center fst-italic mt-4">Education Journey:</h2>
+        <div class="d-flex flex-wrap justify-content-around mt-2">
+            <!-- University of Nebraska Omaha -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">University of Nebraska Omaha</h5>
+                    <p class="card-text">
+                        My current academic pursuit at the University of Nebraska Omaha since 2020 has been focused on achieving a Bachelor of Science in Management Information Systems (MIS). This program has been instrumental in teaching me the skills to leverage technology to solve complex business challenges. The curriculum, coupled with hands-on experiences, has provided me with a solid foundation in information systems, database management, and technology-driven decision-making. As I approach the completion of my bachelor’s degree, I am eager to apply the knowledge and expertise gained during my academic journey to contribute effectively in a professional setting.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- CSU Stanislaus -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">CSU Stanislaus</h5>
+                    <p class="card-text">
+                        My academic journey at California State University, Stanislaus, from 2002 to 2004, attained a Bachelor of Science in Business Administration with a focus on Management. This educational experience laid the foundation for my in-depth understanding of business principles, strategic management, and leadership skills. The program at CSU Stanislaus not only equipped me with a comprehensive knowledge of business concepts but also promoted a strong sense of adaptability and resilience in dynamic professional environments. My bachelor’s degree from CSU Stanislaus reflects my commitment to continuous learning, strategic thinking, and a strong foundation in business management.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+    
+            <!-- Columbia College -->
+            <div class="card home__card m-2">
+                <div class="card-body">
+                    <h5 class="card-title">Columbia College</h5>
+                    <p class="card-text">
+                        During my time at Columbia Junior College from 1998 to 2002, I pursued and successfully attained an Associate of Science in Business Administration and an Associate of Arts in Liberal Studies. This educational foundation has been instrumental in shaping my analytical and critical thinking skills, providing me with a well-rounded understanding of both business principles and liberal arts disciplines. The combination of these degrees reflects my commitment to a holistic approach to problem-solving, effective communication, and a comprehensive understanding of diverse perspectives.
+                    </p>
+                </div>
+                <div class="container text-center mt-auto pb-3">
+                    <a href="{% url 'app:app_resume' %}" class="btn app__btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+{% block script %}{% endblock script %}

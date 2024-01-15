@@ -1,0 +1,283 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Miguel's IT Projects{% endblock title%}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/app_projects.css" %}">
+{% endblock styles %}
+
+<!-- Main Page Content -->
+{% block content %}
+    <div class="">
+        <!-- Main Section -->
+        <section class="vh-100 d-flex flex-column align-content-center align-items-center justify-content-center text-light container ">
+            <h3 class="home__tagline">Tech isn't just a career, it's my playground.</h3>
+            <p class="home__tagline">
+                I've been working on my own projects for the past few years, and I've been sharing them here on my website. I hope you enjoy them!
+            </p>
+            <button class="btn app__btn" onclick="scrollToMainProjects()">Scroll to My Projects</button>
+        </section>
+        <!-- My Projects Main Section -->
+        <section class="d-flex flex-column bg-light text-dark mt-5 p-4" >
+            <h1 id="projects__projects_main" class="text-center border-bottom mb-3">My Playground of IT Projects</h1>
+        
+            <!-- Personal Projects Section -->
+            <h2 class="text-center fst-italic">Personal Projects:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- ThatsCoolCool.com -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">ThatsCoolCool.com</h5>
+                        <small class="text-black-50 ">Technical Skills: HTML, CSS, JavaScript, & JQuery</small>
+                        <p class="card-text">
+                            This website is my first ever project, such as learning what is a HTML tag to learning functions in JavaScript. The project started when I wanted to show my family and friends in California and Mexico, my newborn son Michael and what he was doing and how he was grown. Through time the website expanded to include my family. Each member of my family has a section on the website. I update Michael’s section often to showcase videos, pictures, and his schoolwork. The website is responsive.
+                            <br>
+                            <br>
+                            This project does not have a GitHub repo because it has many videos and pictures and due to GitHub limited storage is not possible to have a GitHub repo for this project.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="https://www.thatscoolcool.com" class="btn app__btn" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+
+                <!-- RochaEnterprises.com -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">RochaEnterprises.com</h5>
+                        <small class="text-black-50 ">Technical Skills: HTML, CSS, JavaScript, & JQuery</small>
+                        <p class="card-text">
+                            Simple responsive one page scroll website that I used when I was an independent contractor working in the food and beverage industry.  
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3 ">
+                        <a href="https://www.rochaenterprises.com" class="btn app__btn me-2" target="_blank">Visit Website</a>
+                        <a href="https://github.com/conqueringtechnology/Rocha-Enterprises-Website.git" class="btn app__btn" target="_blank">Visit GitHub Repo</a>
+                    </div>
+                </div>
+                
+                <!-- ConqueringTechnology.com -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">ConqueringTechnology.com</h5>
+                        <small class="text-black-50 ">Technical Skills: Django, HTML, Bootstrap, CSS, & JavaScript</small>
+                        <p class="card-text">
+                            This responsive website is the website you’re on right now. This website is my IT portfolio and showcases my skills, experiences, education journey, education course projects, & personal projects. You can view my resume, download my resume, and interact with my projects.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3 ">
+                        <a href="https://www.conqueringtechnology.com" class="btn app__btn me-2" target="_blank">Visit Website</a>
+                        <a href="" class="btn app__btn" target="_blank">Visit GitHub Repo</a>
+                    </div>
+                </div>
+        
+                <!-- Memory Game Perfectly Posh -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Perfectly Posh Memory Game </h5>
+                        <small class="text-black-50 ">Technical Skills: HTML, CSS, JavaScript, & JQuery</small>
+                        <p class="card-text">
+                            "Perfectly Posh Memory Game" is a memory game that was created for my wife’s direct sales company that is no longer in business. The app is responsive.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3 ">
+                        <a href="https://memorygame.conqueringtechnology.com" class="btn app__btn me-2" target="_blank">Visit Website</a>
+                        <a href="https://github.com/conqueringtechnology/Memory-Game-Perfectly-Posh.git" class="btn app__btn" target="_blank">Visit GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Nebraska Lottery Number Generator -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Nebraska Lottery Number Generator</h5>
+                        <small class="text-black-50 ">Technical Skills: HTML, CSS, JavaScript, & JQuery</small>
+                        <p class="card-text">
+                            "Nebraska Lottery Number Generator" showcases a responsive website with 6 lottery games that a user can request random numbers to be generated for specific Nebraska Lottery games, such as Power Ball, Pick 5, Mega Millions, Lucky For Life, Pick 3, and 2 By 2. The app is responsive.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3 ">
+                        <a href="https://nebraskalottery.conqueringtechnology.com/" class="btn app__btn me-2" target="_blank">Visit Website</a>
+                        <a href="https://github.com/conqueringtechnology/Nebraska-Lottery-Number-Generator.git" class="btn app__btn" target="_blank">Visit GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Employee Handbook -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Employee Handbook Development</h5>
+                        <small class="text-black-50 ">Technical Skills: Project Development</small>
+                        <p class="card-text">
+                            "Rocha Enterprise LLC Handbook" was created from scratch. The handbook is intended for Offutt USSTRATCOM Cafeteria. Employee Handbook is a compilation of personnel policies, practices, and procedures that were in effect at Deterrence Diner (“Cafeteria”). This handbook is intended to be used by management and staff employed with Rocha Enterprises LLC. The Handbook is designed to introduce the employee to Rocha Enterprises LLC, familiarize the employee with our policies, provide general guidelines on work rules, benefits, performance expectations of Rocha Enterprises LLC and other issues related to employment, and helps answer many of the questions that may arise in connection with employment.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='rocha_enterprises_employee_handbook.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='rocha_enterprises_employee_handbook.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Education Course Projects -->
+            <h2 class="text-center fst-italic mt-4">Education Course Projects:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- CYBR 1100 - Intro Cyber Security -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">CYBR 1100 - Intro Cyber Security</h5>
+                        <small class="text-black-50 ">Paper: Unraveling The Menace</small>
+                        <p class="card-text">
+                            "Unraveling The Menace" paper focuses on the significance of reverse engineering in cybersecurity. It highlights how reverse engineering provides insights into the workings of software and systems, aids in the analysis of malicious code, and contributes to the development of robust defense mechanisms. The paper emphasizes the practical applications of reverse engineering in malware analysis, vulnerability analysis, and network security, enabling organizations to proactively address security weaknesses and minimize the risk of cyber-attacks. By leveraging the knowledge gained through reverse engineering, organizations can strengthen their cybersecurity posture and create a safer digital environment for all stakeholders.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='reverse_engineering_in_cyber_security.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='reverse_engineering_in_cyber_security.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+                
+                <!-- CIST 2100  ORGANIZATIONS, APPLICATIONS AND TECHNOLOGY -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">CIST 2100 - Organizations, Applications, & Technology</h5>
+                        <small class="text-black-50 ">Paper: How Education Has Been Affected by Technology</small>
+                        <p class="card-text">
+                            "How Education Has Been Affected by Technology" paper provides a comprehensive overview of the impact of technology on education. It discusses the evolution of education with technology, its influence on educational institutions' business processes, instructional technology, security, privacy, and its effects on communities, particularly during the COVID-19 pandemic. The paper emphasizes the widespread integration of technology in various educational settings, the use of instructional technology as an instructional tool, and the complex business processes involved in delivering effective teaching. It also addresses the significant effects of COVID-19 on the education system and the substantial investment in education technology to ensure continuity in learning. The paper offers a detailed exploration of the multifaceted relationship between education and technology, particularly in the context of the COVID-19 pandemic.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='how_education_has_been_affected_by_technology.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='how_education_has_been_affected_by_technology.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- CIST 2500  INTRODUCTION TO APPLIED STATISTICS FOR IS&T -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">CIST 2500 - INTRODUCTION TO APPLIED STATISTICS FOR IS&T</h5>
+                        <small class="text-black-50 ">Paper: Should You Consider An Electric Vehicle?</small>
+                        <p class="card-text">
+                            "Should You Consider An Electric Vehicle?" paper discusses various aspects of electric vehicles (EVs), including descriptive and inferential statistics related to EV price, acceleration, top speed, battery range, battery capacity, battery efficiency, and rapid charge. The paper provides an overview of the history of EVs, the dataset used for analysis, and the importance of different factors such as price, performance, and environmental concerns in the context of EVs. It also includes descriptive statistics, such as the distribution of EV prices, acceleration times, top speeds, battery ranges, and battery capacities. Furthermore, it delves into inferential statistics, including hypothesis testing about EV prices and their affordability. The document aims to help readers make an informed decision about whether to consider purchasing an EV.
+                        </p>
+                        <ul class="card-text">
+                            <li>Introduction to the history and development of Electric Vehicles (EVs)</li>
+                            <li>Description of the dataset used for analysis, obtained from Kaggle.com</li>
+                            <li>Importance of factors such as price, performance, and environmental concerns in the context of EVs</li>
+                            <li>Descriptive statistics related to EV:
+                                <ul>
+                                    <li>Price</li>
+                                    <li>Acceleration</li>
+                                    <li>Top Speed</li>
+                                    <li>Battery Range</li>
+                                    <li>Battery Capacity</li>
+                                    <li>Battery Efficiency</li>
+                                    <li>Rapid Charge</li>
+                                </ul>
+                            </li>
+                            <li>Inferential statistics, including hypothesis testing about EV prices and their affordability</li>
+                        </ul>
+                        <p class="card-text">
+                            The paper provides a comprehensive analysis of various aspects of EVs, for readers to evaluate whether they should consider purchasing an electric vehicle.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='should_you_consider_an_electric_vehicle.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='should_you_consider_an_electric_vehicle.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- ISQA 4010: Business Intelligence -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">ISQA 4010 - Business Intelligence</h5>
+                        <small class="text-black-50 ">Paper: An Analysis of Movie Data</small>
+                        <p class="card-text">
+                            "An Analysis of Movie Data" paper covers various aspects such as dataset description, tools and techniques used, shortcomings and challenges, and outcomes. The analysis utilized tools like Excel, R Studio, and R Markdown, along with techniques such as data cleaning, visualization, and machine learning algorithms. The dataset consists of nearly 10,000 entries of successful movies, including information on budget, revenue, rating, genre, release date, and language. The analysis aimed to identify key factors in the success of movies and provide valuable insights for stakeholders in the movie industry. The paper also discusses the limitations of the TMDB API, including incomplete or inaccurate data, limited access to industry data, and restrictions on the number of requests. The outcomes section presents findings related to movie ratings' performance at the box office and the highest average quality ratings for different film ratings. The analysis was conducted using a combination of data mining tools and techniques to derive meaningful insights from the data.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='an_analysis_ of_movie_data.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='an_analysis_ of_movie_data.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- ISQA 4110 - INFORMATION SYSTEMS-->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">ISQA 4110 - INFORMATION SYSTEMS</h5>
+                        <small class="text-black-50 ">Paper: User Account System For A Game</small>
+                        <p class="card-text">
+                            This is a project management document for an user account system for a game. This project document outlines the proposal for an online tabletop trading card game that will be developed by our company. Gaming online is exploding, and our company will leverage the power of replicating the tactile and social aspects of strategic tabletop gaming while enhancing it with digital advantages like immersive online gameplay experience, accessibility, and convenience. The game will have splendid features such as trading cards, game store, two players, matching players, and more. This game will capture and maintain a strong gaming community through the interaction and engagement of the players. Maverick Analyzers will focus on having a secure, user friendly, and strong user account system that allows users to create an account, login, logout, reset forgotten password, access their account page, home page, and about page. Having a well-developed user account system is important to the success and the trustworthiness of the game. Maverick Analyzers will collaborate closely with our clients and partners to ensure that the account system meets their needs and exceeds their expectations. Maverick Analyzers will continue updating documents to provide up to date analysis. We will provide the design documentation to give the client a detailed overview of the context, flow, and functionality of the account system.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- CYBR 4360 - FOUNDATIONS OF CYBR - Annotation Bibliography -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">CYBR 4360 - FOUNDATIONS OF CYBR- Annotation Bibliography</h5>
+                        <small class="text-black-50 ">Annotation Bibliography: Ensuring Cybersecurity in Connected Autonomous Vehicles</small>
+                        <p class="card-text">
+                            Ensuring Cybersecurity in Connected Autonomous Vehicles annotation bibliography dives into the cybersecurity of connected autonomous vehicles (CAVs). CAVs are set to revolutionize transportation by improving efficiency and accessibility. They can communicate with other vehicles and infrastructure, operating without user intervention. While significant progress has been made in their development, CAVs face challenges in cybersecurity. They are vulnerable to diverse cyber-attacks, including those targeting electronic systems, communication networks, software, and data. To ensure their safety, it is essential to maintain a robust defense mechanism against cyber threats. Research has focused on identifying cybersecurity vulnerabilities and developing countermeasures to mitigate potential cyber threats against CAVs. The ongoing development of proactive measures and novel protection tactics is crucial for addressing the complex and dynamic cybersecurity issues that CAVs face in the real world. The security challenges associated with CAVs must be thoroughly understood and addressed to support their safe and secure integration into the transportation ecosystem. Several peer-reviewed sources provide in-depth information about CAV vulnerabilities, cyberattacks against CAVs, and the challenges they face in cybersecurity, offering valuable resources for understanding and addressing these issues.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='ensuring_cybersecurity_in_autonomous_vehicles.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='ensuring_cybersecurity_in_autonomous_vehicles.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+                
+                <!-- CYBR 4360 - FOUNDATIONS OF CYBR - Tool Review -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">CYBR 4360 - FOUNDATIONS OF CYBR - Tool Review</h5>
+                        <small class="text-black-50 ">Tool Review: OWASP ZAP Software</small>
+                        <div class="card-text">
+                            <p>
+                                This is my tool review presentation for OWASP ZAP. OWASP ZAP is a powerful and versatile tool. ZAP plays a vital role in identifying and mitigating security vulnerabilities within web applications. This tool provides a good experience and tools for beginners and professionals. OWASP community is a good resource and provides in depth documentation for web application vulnerabilities.
+                            </p>
+                        </div>
+                        <div class="card-text d-flex justify-content-center py-1">
+                            <iframe class=" " src="https://www.youtube.com/embed/6X3vx3VyAS4?si=YrYcLz37V12L66Jy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' pdf_filename='.pdf' %}" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- ISQA 4900 - Full Stack -->
+                <div class="card projects__card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">ISQA 4900 - Full Stack</h5>
+                        <small class="text-black-50 ">Technical Skills: Vue, Django, HTML, CSS, JavaScript</small>
+                        <p class="card-text">
+                            MavTrack app is an app where the user is able to create a training plan. MavTrack will recommend a training schedule based on the users response to the questions. The user can view their schedule and mark them complete. The user can increase or decrease the training level. They can also view the progress of their training.
+                        </p>
+                        <p class="card-text">
+                            You can demo the app by logging in with the following credentials:
+                            <br>
+                            <b class="ms-4"><em>Username: technology</em></b>
+                            <br>
+                            <b class="ms-4"><em>Password: Pass@1234</em></b>
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="https://lustrous-kheer-25cf4a.netlify.app" class="btn app__btn me-2" target="_blank">View Project</a>
+                        <a href="https://github.com/conqueringtechnology/MavTrack-App.git" class="btn app__btn" target="_blank">Visit GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    {% block script %}
+        <!-- External Projects JS File -->
+        <script src="{% static 'js/app_projects.js'%}"></script>
+    {% endblock script %}
+{%endblock content %}
+
+
+

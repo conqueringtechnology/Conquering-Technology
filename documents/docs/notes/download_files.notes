@@ -1,0 +1,56 @@
+-=Download Files=-
+settings.py:
+    [python]
+        from pathlib import Path
+
+        # Build paths inside the project like this: BASE_DIR / 'subdir'.
+        BASE_DIR = Path(__file__).resolve().parent.parent
+        STATICFILES_DIRS = [BASE_DIR / 'static']
+        STATIC_URL = '/static/'
+        STATIC_ROOT = BASE_DIR / 'staticfiles'
+    [end]
+
+views.py:
+    [python]
+        class DownloadResumeView(View):
+            def get(self, request, *args, **kwargs):
+                # Path to your resume file
+                resume_path = os.path.join(settings.STATIC_ROOT, 'docs/pdf/miguel_rocha_resume.pdf')
+
+                if os.path.exists(resume_path):
+                    # Serve the file using Django's FileResponse
+                    response = FileResponse(open(resume_path, 'rb'))
+                    response['Content-Type'] = 'application/pdf'
+                    response['Content-Disposition'] = 'attachment; filename="miguel_rocha_resume.pdf"'
+                    return response
+                else:
+                    # Display a message if the file is not found
+                    download_message = 'Resume not found.'
+                    download_message_type = 'danger'
+                    return render(request, 'resume.html', {'download_message': download_message, 'download_message_type': download_message_type})
+    [end]
+
+urls.py:
+    [python]
+        from.views import DownloadResumeView
+        path('download-resume/', DownloadResumeView.as_view(), name='app_download_resume'),
+    [end]
+Template:
+    [html]
+        <div class="container">
+            <h1 class="mt-5">Download My Resume</h1>
+            <p class="lead">Click the button below to download my resume:</p>
+            <a href="{% url 'app:app_download_resume' %}" class="btn btn-primary">Download Resume</a>
+        
+            <div id="download-message" class="mt-3">
+                {% if download_message %}
+                    <div class="alert alert-{{ download_message_type|default:'danger' }}" 
+                    role="alert">
+                        {{ download_message }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    [end]
+Pip:
+    If needed: python manage.py collectstatic

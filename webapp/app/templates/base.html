@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Miguel Rocha IT Portfolio{% endblock %}</title>
+    <!-- Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">   
+    {% bootstrap_css %}
+    <!-- Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block styles %}{% endblock styles %}
+</head>
+<body class="projects__splashscreen d-flex flex-column">
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-dark navbar-expand-lg" id="MainNavbar">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand" href="{% url 'app:home' %}">Miguel Rocha IT Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav home__navulcustom ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/home/' or request.path == '/' %}active{% endif %}"
+                                href="{% url 'app:app_home' %}" aria-current="page">
+                                <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/projects/' %}active{% endif %}"
+                                href="{% url 'app:app_projects' %}" aria-current="page">
+                                <i class="fas fa-code"></i> Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/resume/' %}active{% endif %}"
+                                href="{% url 'app:app_resume' %}" aria-current="page">
+                                <i class="fas fa-user-tie"></i> Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}"
+                                href="{% url 'app:app_contact' %}" aria-current="page">
+                                <i class="fas fa-address-card"></i> Contact</a>
+                        </li>
+                        <li class="nav-item mt-sm-1 mt-lg-0 ms-lg-1  ">
+                            <a class="nav-link home__resumedownload rounded-4"
+                            href="{% url 'app:app_download_resume' %}">
+                            <i class="fas fa-download"></i> Download Resume</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
+        <main>
+            {% bootstrap_messages %}
+        </main>
+        <footer>
+            {% block footer %}{% endblock footer %}
+        </footer>
+    {% endblock content %}
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Bootstrap5 CDN -->
+    {% bootstrap_javascript %}
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>

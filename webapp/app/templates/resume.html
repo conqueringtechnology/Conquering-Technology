@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/app_resume.css" %}">
+{% endblock styles %}
+{% block title%}Miguel's Resume{% endblock title %}
+{% block content %}
+<!-- Download Resume -->
+<div class="container text-center mt-3">
+    <section class="d-inline-flex align-items-center text-white border border-2 border-dark rounded-4 p-2">
+        <h6 class="me-3 mb-0">Download My Resume</h6>
+        <a href="{% url 'app:app_download_resume' %}" class="btn app__btn btn-sm">Download Resume (.pdf)</a>
+        
+        <!-- Message No Resume Found -->
+        <div id="download-message" class="mt-3">
+            {% if download_message %}
+                <div class="alert alert-{{ download_message_type|default:'danger' }}" role="alert">
+                    {{ download_message }}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+</div>
+
+<!-- Main Resume -->
+<div class="container">
+    <section class="d-flex align-items-center">
+        <div class="d-flex flex-column bg-light text-dark my-4 p-2">
+            <div class="text-center">
+                <h1 class=" border-bottom">Miguel Rocha</h1>
+                <address>
+                    <span>814 W 26th St Scottsbluff, NE 69361</span><br>
+                    <span>Mobile: <a href="tel:+" title="Miguel Rocha Mobile">(308) 225-2772</a></span><br>
+                    <a title="Miguel Rocha Email" href="mailto:miguelrocha@conqueringtechnology.com">miguelrocha@conqueringtechnology.com</a><br>
+                    <span>Personal Website: <a href="https://www.conqueringtechnology.com" title="Miguel Rocha's Website">www.conqueringtechnology.com</a></span><br>
+                    <!-- Include QR code image -->
+                    <img src="{% url 'app:app_generate_qr_code' %}" alt="QR Code for Website www.conqueringtechnology.com">
+                </address>
+            </div>
+
+            <!-- My Objectives Section -->
+            <h2 class="text-center fst-italic">OBJECTIVE:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- Commissioner, NCBVI -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Information Technology Internship</h5>
+                        <p class="card-text">
+                            My objective is to pursue an information technology opportunity for an internship or part-time position for the upcoming summer of 2024 that enables me to apply my academic knowledge and skills acquired throughout my education journey in a real-world professional setting. Scan the QR Code above or click on the link 
+                            <a href="http://www.conqueringtechnology.com" target="_blank" rel="noopener noreferrer">www.conqueringtechnology.com</a> to visit my personal website and know more about me, view a digital version of my resume, download additional copies of my resume, and interact with my personal projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Experience Section -->
+            <h2 class="text-center fst-italic">PROFESSIONAL EXPERIENCE:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- Commissioner, NCBVI -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Commissioner, Nebraska Commission for the Blind & Visually Impaired</h5>
+                        <small class="text-black-50 ">2023-Present</small>
+                        <ul class="card-text">
+                            <li>Employ an Executive Director for NCBVI.</li>
+                            <li>Annually evaluate the Executive Director.</li>
+                            <li>Provide guidance to the Executive Director in carrying out the mission of NCBVI.</li>
+                            <li>Seek input from both consumers and staff through public meetings, correspondence, surveys, etc.</li>
+                            <li>Approve rules, regulations, and policies adopted and promulgated by NCBVI.</li>
+                            <li>Have a working knowledge of the Rehabilitation Act (WIOA), rules and regulations, and other materials necessary for the operation of NCBVI.</li>
+                            <li>Serve as a liaison between the public and NCBVI.</li>
+                            <li>Attend and participate in NCBVI functions whenever possible, meeting with the entire staff as often as feasible.</li>
+                            <li>Receive both written and in-person agency reports and budgetary information and monitor processes.</li>
+                            <li>Answer questions from consumers, NCBVI employees, and the public about NCBVI programs, processes, policies, and procedures, seeking input from appropriate staff to provide accurate and up-to-date information.</li>
+                            <li>Make suggestions and recommendations to NCBVI that will improve its operation and lead to better services for its consumers.</li>
+                            <li>Develop and maintain a Commissioner Information Packet that will facilitate the training of new Board Members.</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Onsite Manger, Rocha Enterprises LLC -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Onsite Manger, Rocha Enterprises LLC</h5>
+                        <small class="text-black-50 ">2018-2020</small>
+                        <ul class="card-text">
+                            <li>Oversees business and operations of dining facility</li>
+                            <li>Resolved problems with leadership</li>
+                            <li>Lead the staff to problem-solving by performing teamwork</li>
+                            <li>Developed and reported business documents</li>
+                            <li>Developed/implemented standard operations procedures</li>
+                            <li>Determined dining facility staffing needs</li>
+                            <li>Developed weekly employee schedules</li>
+                            <li>Submitted payroll to human resources</li>
+                            <li>Monitored employees' activities and duties</li>
+                            <li>Oversees ordering, inventory & stocking of food & supplies</li>
+                            <li>Analyze reports to control food costs, labor, and overhead costs</li>
+                            <li>Follow ServSafe Manager sanitation practices, food preparation, food serving and food storage procedures</li>
+                            <li>Submit proper documentation to military in a timely manner</li>
+                            <li>Evaluate the present level of skills of employees and what they are capable of performing and their needs for performing their duties</li>
+                            <li>Work with the Teaming Partner and staff and educate them about blindness and the abilities of blind individuals</li>
+                            <li>Set up and implemented the necessary technology for the business (hardware, software, internet, and communication) using JAWS and ZoomText</li>
+                            <li>Communicated with Teaming Partner, military personnel, and state agency regarding the performance of the facility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dining Facility Manager, WGS Consulting & Investments -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Dining Facility Manager, WGS Consulting & Investments, Ashland NE</h5>
+                        <small class="text-black-50 ">2017-2018</small>
+                        <ul class="card-text">
+                            <li>Oversees business and operations of dining facility</li>
+                            <li>Developed and reported business documents</li>
+                            <li>Developed/implemented standard operations procedures</li>
+                            <li>Determined dining facility staffing needs</li>
+                            <li>Developed weekly employee schedules</li>
+                            <li>Submitted payroll to human resources</li>
+                            <li>Monitored employees' activities and duties</li>
+                            <li>Oversees ordering, inventory & stocking of food & supplies</li>
+                            <li>Analyze reports to control food costs, labor, and overhead costs</li>
+                            <li>Follow ServSafe Manager sanitation practices, food preparation, food serving, and food storage procedures</li>
+                            <li>Submit proper documentation to military in a timely manner</li>
+                            <li>Evaluate the present level of skills of employees and what they are capable of performing and their needs for performing their duties</li>
+                            <li>Work with the Teaming Partner and staff and educate them about blindness and the abilities of blind individuals</li>
+                            <li>Set up and implemented the necessary technology for the business (hardware, software, internet, and communication) using JAWS and ZoomText</li>
+                            <li>Communicated with Teaming Partner, military personnel, and state agency regarding the performance of the facility</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Senior Technical Support, Aldelo LP -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Senior Support Technician/Sales, Aldelo LP, Modesto, CA</h5>
+                        <small class="text-black-50 ">2005-2014</small>
+                        <ul class="card-text">
+                            <li>Advanced support & troubleshooting of point of sale, payment processing, and enterprise management software through phone, email, and remote software to worldwide customers in English & Spanish</li>
+                            <li>Insured stability testing of Aldelo Software</li>
+                            <li>Tested & certified hardware</li>
+                            <li>Managed customers & reseller accounts</li>
+                            <li>Translated documentation from English to Spanish</li>
+                            <li>Performed sales and recruit of resellers</li>
+                            <li>Training of new employees to learn the software and hardware of the job</li>
+                            <li>Documented cases of customers</li>
+                            <li>Utilized ZoomText for job duties, educating the employer and co-workers about assistive technology</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Computer Science Lab Assistant, CSU Stanislaus -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Computer Science Lab Assistant, CSU Stanislaus, Turlock, CA</h5>
+                        <small class="text-black-50 ">2003-2004</small>
+                        <ul class="card-text">
+                            <li>Assist students with lab work</li>
+                            <li>Maintain/clean computers & computer lab</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Journey Section -->
+            <h2 class="text-center fst-italic mt-4">EDUCATION:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- University of Nebraska Omaha -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">University of Nebraska Omaha, Omaha, NE</h5>
+                        <h6 class="card-text">
+                            Bachelor of Science in Management Information Systems
+                        </h6>
+                        <small class="text-black-50 ">2020-Present</small>
+                    </div>
+                </div>
+        
+                <!-- California State University, Stanislaus -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">California State University, Stanislaus, Turlock, CA		</h5>
+                        <h6 class="card-text">
+                            Bachelor of Science, Business Administration/Management
+                        </h6>
+                        <small class="text-black-50 ">2002-2004</small>
+                    </div>
+                </div>
+        
+                <!-- Columbia Junior College -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Columbia Junior College, Columbia, CA</h5>
+                        <h6 class="card-text">
+                            Associate of Science, Business Administration 
+                            <br>
+                            Associate of Arts, Liberal Studies
+                        </h6>
+                        <small class="text-black-50 ">1998-2002</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <h2 class="text-center fst-italic mt-4">CERTIFICATION:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- Freedom Scientific -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Freedom Scientific</h5>
+                        <h6 class="card-text">
+                            JAWS 2020 Certification
+                        </h6>
+                        <small class="text-black-50 ">2020</small>
+                    </div>
+                </div>
+
+                <!-- Hadley Institute for the Blind and Visually Impaired -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Hadley Institute for the Blind and Visually Impaired, Winnetka, IL</h5>
+                        <h6 class="card-text">
+                            Entrepreneur of Excellence Certification
+                            <br>
+                            Business Enterprise Program
+                        </h6>
+                        <small class="text-black-50 ">2017-2019</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOLUNTEER EXPERIENCE Section -->
+            <h2 class="text-center fst-italic mt-4">VOLUNTEER EXPERIENCE:</h2>
+            <div class="d-flex flex-wrap justify-content-around mt-2">
+                <!-- Nebraska Career Mentoring Program -->
+                <div class="card m-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Nebraska Career Mentoring Program</h5>
+                        <h6 class="card-text">
+                            I was a mentor for the Nebraska Career Mentoring Program that is a coordination between the National Federation of the Blind and Nebraska Commission of the Blind and Visually Impaired. My goal was to reach out to my 3 mentees and make a positive impact in their lives by achieving skills, education, and career goals and live and work independently.
+                        </h6>
+                        <small class="text-black-50 ">2018-2019</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{%endblock%}
+{% block script %}{% endblock script %}
