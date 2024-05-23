@@ -4,7 +4,10 @@ from django.views import View
 from django.conf import settings
 import os
 import qrcode
+import logging
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
 
 # Main App View
 def home(request):
@@ -50,20 +53,85 @@ def generate_qr_code(request):
 
 
 # View Project Files
-def project_files(request, pdf_filename):
-    # Locate the FIles
-    project_files_path = os.path.join(settings.BASE_DIR, 'static', 'docs', 'pdf', pdf_filename)
+def project_files(request, filename):
+    # Determine the file type and folder based on the extension
+    if filename.endswith('.pdf'):
+        file_type = 'application/pdf'
+        folder = 'pdf'
+    elif filename.endswith('.zip'):
+        file_type = 'application/zip'
+        folder = 'zip'
+    elif filename.endswith('.csv'):
+        file_type = 'text/csv'
+        folder = 'csv'
+    else:
+        # If the file extension is not supported, return an error message
+        download_message = 'File type not supported.'
+        download_message_type = 'danger'
+        return render(request, 'projects.html', {'download_message': download_message, 'download_message_type': download_message_type})
 
-    # Serve the Files
+    # Locate the file
+    project_files_path = os.path.join(settings.BASE_DIR, 'static', 'docs', folder, filename)
+    logging.debug(f"Looking for file at path: {project_files_path}")
+
+    # Check if the file exists
     if os.path.exists(project_files_path):
         response = FileResponse(open(project_files_path, 'rb'))
-        response['Content-Type'] = 'application/pdf'
+        response['Content-Type'] = file_type
+        
+        # Check for the 'download' query parameter to set the Content-Disposition header
+        if request.GET.get('download') == 'true':
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+        else:
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
+        
         return response
     else:
         # Display a message if the file is not found
         download_message = 'File not found.'
         download_message_type = 'danger'
-    return render(request, 'projects.html', {'download_message': download_message, 'download_message_type': download_message_type})
+        logging.error(f"File not found at path: {project_files_path}")
+        return render(request, 'projects.html', {'download_message': download_message, 'download_message_type': download_message_type})
+
+
+def project_files(request, filename):
+    # Determine the file type and folder based on the extension
+    if filename.endswith('.pdf'):
+        file_type = 'application/pdf'
+        folder = 'pdf'
+    elif filename.endswith('.zip'):
+        file_type = 'application/zip'
+        folder = 'zip'
+    elif filename.endswith('.csv'):
+        file_type = 'text/csv'
+        folder = 'csv'
+    else:
+        # If the file extension is not supported, return a 404 error
+        download_message = 'File type not supported.'
+        download_message_type = 'danger'
+        return render(request, 'projects.html', {'download_message': download_message, 'download_message_type': download_message_type})
+
+    # Locate the file
+    project_files_path = os.path.join(settings.BASE_DIR, 'static', 'docs', folder, filename)
+    logging.debug(f"Looking for file at path: {project_files_path}")
+
+    # Serve the file
+    if os.path.exists(project_files_path):
+        response = FileResponse(open(project_files_path, 'rb'))
+        response['Content-Type'] = file_type
+        # Set Content-Disposition to 'inline' for PDFs and 'attachment' for others
+        if file_type == 'application/pdf':
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
+        else:
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+        return response
+    else:
+        # Display a message if the file is not found
+        download_message = 'File not found.'
+        download_message_type = 'danger'
+        logging.error(f"File not found at path: {project_files_path}")
+        return render(request, 'projects.html', {'download_message': download_message, 'download_message_type': download_message_type})
+
 
 
 # Download Miguel Resume

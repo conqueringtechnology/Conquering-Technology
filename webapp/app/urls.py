@@ -14,7 +14,7 @@ urlpatterns = [
     path('resume/', user_views.resume, name='app_resume'),
     path('contact/', user_views.contact, name='app_contact'),
     path('generate-qr-code/', user_views.generate_qr_code, name='app_generate_qr_code'),
-    path('project-files/<str:pdf_filename>/', user_views.project_files, name='project_files'),
+    path('project_files/<str:filename>/', user_views.project_files, name='project_files'),
     path('download-resume/', DownloadResumeView.as_view(), name='app_download_resume'),
 ]
 
