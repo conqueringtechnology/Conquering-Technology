@@ -32,7 +32,7 @@
                             This website is my first ever project, such as learning what is a HTML tag to learning functions in JavaScript. The project started when I wanted to show my family and friends in California and Mexico, my newborn son Michael and what he was doing and how he was grown. Through time the website expanded to include my family. Each member of my family has a section on the website. I update Michael’s section often to showcase videos, pictures, and his schoolwork. The website is responsive.
                             <br>
                             <br>
-                            This project does not have a GitHub repo because it has many videos and pictures and due to GitHub limited storage is not possible to have a GitHub repo for this project.
+                            This project does not have a GitHub repo because it has many videos and pictures and due to GitHub limited storage it is not possible to have a GitHub repo for this project.
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3">
@@ -61,7 +61,7 @@
                         <h5 class="card-title">ConqueringTechnology.com</h5>
                         <small class="text-black-50 ">Technical Skills: Django, HTML, Bootstrap, CSS</small>
                         <p class="card-text">
-                            This responsive website is the website you’re on right now. This website is my IT portfolio and showcases my skills, experiences, education journey, education course projects, & personal projects. You can view my resume, download my resume, and interact with my projects.
+                            This responsive website is the website you’re on right now. This website is my IT portfolio and shows my skills, experiences, education journey, education course projects, & personal projects. You can view my resume, download my resume, and interact with my projects.
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3 ">
@@ -106,7 +106,7 @@
                         <h5 class="card-title">Employee Handbook Development</h5>
                         <small class="text-black-50 ">Technical Skills: Project Development</small>
                         <p class="card-text">
-                            "Rocha Enterprise LLC Handbook" was created from scratch. The handbook is intended for Offutt USSTRATCOM Cafeteria. Employee Handbook is a compilation of personnel policies, practices, and procedures that were in effect at Deterrence Diner (“Cafeteria”). This handbook is intended to be used by management and staff employed with Rocha Enterprises LLC. The Handbook is designed to introduce the employee to Rocha Enterprises LLC, familiarize the employee with our policies, provide general guidelines on work rules, benefits, performance expectations of Rocha Enterprises LLC and other issues related to employment, and helps answer many of the questions that may arise in connection with employment.
+                            "Rocha Enterprise LLC Handbook" was created from scratch. The handbook is intended for Offutt USSTRATCOM Cafeteria. Employee Handbook is a compilation of personnel policies, practices, and procedures that were in effect at Deterrence Diner (“Cafeteria”). This handbook is intended to be used by management and staff employed with Rocha Enterprises LLC. The Handbook is designed to introduce employees to Rocha Enterprises LLC, familiarize the employee with our policies, provide general guidelines on work rules, benefits, performance expectations of Rocha Enterprises LLC and other issues related to employment, and helps answer many of the questions that may arise in connection with employment.
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3">
@@ -121,7 +121,7 @@
             <div class="d-flex flex-wrap justify-content-around mt-2">
                 <!-- CYBR 1100 - Intro Cyber Security -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="cybr1100">
                         <h5 class="card-title">Intro Cybersecurity - CYBR 1100</h5>
                         <small class="text-black-50 ">Paper: Unraveling The Menace</small>
                         <p class="card-text">
@@ -136,7 +136,7 @@
                 
                 <!-- CIST 2100  ORGANIZATIONS, APPLICATIONS AND TECHNOLOGY -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="cist2100">
                         <h5 class="card-title">Organizations, Applications, & Technology - CIST 2100</h5>
                         <small class="text-black-50 ">Paper: How Education Has Been Affected by Technology</small>
                         <p class="card-text">
@@ -151,7 +151,7 @@
 
                 <!-- CIST 2500  INTRODUCTION TO APPLIED STATISTICS FOR IS&T -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="cist2500">
                         <h5 class="card-title">Introduction To Applied Statistics For IS&T - CIST 2500</h5>
                         <small class="text-black-50 ">Paper: Should You Consider An Electric Vehicle?</small>
                         <p class="card-text">
@@ -186,11 +186,11 @@
 
                 <!-- ISQA 3900: Web Application Development-->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa3900">
                         <h5 class="card-title">Web Application Development - ISQA 3900</h5>
                         <small class="text-black-50 ">Technical Skills: Django, HTML, CSS, Bootstrap, JQuery</small>
                         <p class="card-text">
-                            ShowFlick app is an app where the user is able to search and perform deep filter to find the show or movie you are in the mood in. User is able to make a list and email the list. Create, view, edit, delete shows/movies. Also can create, view, update, and delete actors, genre, and streaming.
+                            ShowFlick app is an app where the user can search and perform deep filter to find the show or movie you are in the mood in. Users can make a list and email the list. Create, view, edit, delete shows/movies. Also, can create, view, update, and delete actors, genre, and streaming.
                         <p class="card-text">
                             You can demo the app by logging in with the following credentials:
                             <br>
@@ -207,7 +207,7 @@
 
                 <!-- ISQA 4010: Business Intelligence -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa4010">
                         <h5 class="card-title">Business Intelligence - ISQA 4010</h5>
                         <small class="text-black-50 ">Paper: An Analysis of Movie Data</small>
                         <p class="card-text">
@@ -215,18 +215,46 @@
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3">
-                        <a href="{% url 'app:project_files' filename='an_analysis_ of_movie_data.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
-                        <a href="{% url 'app:project_files' filename='an_analysis_ of_movie_data.pdf' %}?download=true" class="btn app__btn" download>Download Paper (.pdf)</a>
+                        <a href="{% url 'app:project_files' filename='an_analysis_of_movie_data.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' filename='an_analysis_of_movie_data.pdf' %}?download=true" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                </div>
+
+                <!-- ISQA 4100 - Information Systems Architecture and Organization -->
+                <div class="card projects__card m-2">
+                    <div class="card-body" id="isqa4100">
+                        <h5 class="card-title">Information Systems Architecture and Organization - ISQA 4100</h5>
+                        <small class="text-black-50 ">Paper: Draig Airlines Technology Architecture Project</small>
+                        <p class="card-text">
+                            The "Draig Airlines Architecture" project focuses on the fictitious Draig Airlines company. Draig Airlines founded in 2023 and based in Omaha, Nebraska, operates a fleet of seven medium-sized airplanes, offering non-stop service to East and West cities in the United States. The airline aims to replace outdated systems with modern technology to support its growth and improve efficiency.
+                        </p>
+                        <p class="card-text">
+                            The project focuses on creating a scalable and reliable IT architecture. This includes moving to cloud-based systems for flexibility and real-time data access, ensuring all locations have instant updates. Cloud-hosted baggage handling systems will be accessible from any airport, while a hybrid storage approach combines local storage for fast, secure tasks with cloud storage for backups and scalability.
+                        </p>
+                        <p class="card-text">
+                            The architecture uses microservices to break down tasks like ticketing and baggage tracking into smaller, manageable parts, making it easier to update and maintain. The network design connects the headquarters and airports securely through firewalls and cloud services, ensuring smooth and secure operations. Staff and customer devices, such as terminals, kiosks, and mobile tools, will connect to the system for real-time updates and efficient service.
+                        </p>
+                        <p class="card-text">
+                            This new architecture aims to improve customer experience, streamline operations like baggage and ticketing, and provide a flexible system that can grow as the airline expands.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' filename='final_integrated_for_draig_airlines.pdf' %}" target="_blank" class="btn app__btn me-2">View Paper</a>
+                        <a href="{% url 'app:project_files' filename='final_integrated_for_draig_airlines.pdf' %}?download=true" class="btn app__btn" download>Download Paper (.pdf)</a>
+                    </div>
+                    <div class="d-flex justify-content-center mt-auto pb-3">
+                        <a href="{% url 'app:project_files' filename='erd_draig_airlines.pdf' %}" target="_blank" class="btn app__btn me-2">View ERD</a>
+                        <a href="{% url 'app:project_files' filename='erd_draig_airlines.pdf' %}?download=true" class="btn app__btn" download>Download ERD (.pdf)</a>
                     </div>
                 </div>
 
                 <!-- ISQA 4110 - INFORMATION SYSTEMS ANALYSIS-->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa4110">
                         <h5 class="card-title">Information Systems Analysis - ISQA 4110</h5>
-                        <small class="text-black-50 ">Paper: User Account System For A Online Game</small>
+                        <small class="text-black-50 ">Paper: User Account System for An Online Game</small>
                         <p class="card-text">
-                            This is a project management document for an user account system for a online game. This project document outlines the proposal for an online tabletop trading card game that will be developed. Gaming online is exploding, and the team will leverage the power of replicating the tactile and social aspects of strategic tabletop gaming while enhancing it with digital advantages like immersive online gameplay experience, accessibility, and convenience. Maverick Analyzers (class team name)will focus on having a secure, user friendly, and strong user account system that allows users to create an account, login, logout, reset forgotten password, access their profile page, edit profile page, view home page, and about page. Having a well-developed user account system is important to the success and the trustworthiness of the game. Maverick Analyzers will collaborate closely with our clients and partners to ensure that the account system meets their needs and exceeds their expectations. Maverick Analyzers will continue updating documents to provide up to date analysis. We will provide the design documentation to give the client a detailed overview of the context, flow, and functionality of the user account system.
+                            This is a project management document for a user account system for an online game. This project document outlines the proposal for an online tabletop trading card game that will be developed. Gaming online is exploding, and the team will leverage the power of replicating the tactile and social aspects of strategic tabletop gaming while enhancing it with digital advantages like immersive online gameplay experience, accessibility, and convenience. Maverick Analyzers (class team name)will focus on having a secure, user friendly, and strong user account system that allows users to create an account, login, logout, reset forgotten password, access their profile page, edit profile page, view home page, and about page. Having a well-developed user account system is important to the success and the trustworthiness of the game. Maverick Analyzers will collaborate closely with our clients and partners to ensure that the account system meets their needs and exceeds their expectations. Maverick Analyzers will continue updating documents to provide up to date analysis. We will provide the design documentation to give the client a detailed overview of the context, flow, and functionality of the user account system.
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3">
@@ -237,11 +265,11 @@
 
                 <!-- ISQA 4120 - SYSTEM DESIGN AND IMPLEMENTATION - Paper-->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa4120-1">
                         <h5 class="card-title">System Design & Implementation - ISQA 4120 - Project Management Documentation</h5>
-                        <small class="text-black-50 ">Paper: User Account System For A Online Game</small>
+                        <small class="text-black-50 ">Paper: User Account System for an Online Game</small>
                         <p class="card-text">
-                            This is a project management document for an user account system for a online game. This project document is the continuation of the previous project document. This project document outlines the design and implementation of the user account system for the online game. Maverick Analyzers (class team name) will collaborate closely with our clients and partners to ensure that the account system meets their needs and exceeds their expectations. Maverick Analyzers will continue updating documents to provide up to date analysis. We will provide the design and implementation documentation to give the client a detailed overview of the context, flow, and functionality of the user account system.
+                            This is a project management document for a user account system for an online game. This project document is the continuation of the previous project document. This project document outlines the design and implementation of the user account system for the online game. Maverick Analyzers (class team name) will collaborate closely with our clients and partners to ensure that the account system meets their needs and exceeds their expectations. Maverick Analyzers will continue updating documents to provide up to date analysis. We will provide the design and implementation documentation to give the client a detailed overview of the context, flow, and functionality of the user account system.
                         </p>
                     </div>
                     <div class="d-flex justify-content-center mt-auto pb-3">
@@ -252,11 +280,11 @@
 
                 <!-- ISQA 4120 - SYSTEM DESIGN AND IMPLEMENTATION - User Account System App-->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa4120-2">
                         <h5 class="card-title">System Design & Implementation - ISQA 4120 - User Account System App</h5>
                         <small class="text-black-50 ">Technical Skills: Django, HTML, CSS, Bootstrap</small>
                         <p class="card-text">
-                            User Account System app is an app where the user is able to
+                            User Account System app is an app where the user can
                             create an account, login, logout, reset forgotten password, access their profile page, edit profile page, view home page, and about page.
                         </p>
                     </div>
@@ -268,7 +296,7 @@
 
                 <!-- CYBR 4360 - FOUNDATIONS OF CYBR - Annotation Bibliography -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="cybr4360-1">
                         <h5 class="card-title">Foundations of Cybersecurity - Annotation Bibliography - CYBR 4360</h5>
                         <small class="text-black-50 ">Annotation Bibliography: Ensuring Cybersecurity in Connected Autonomous Vehicles</small>
                         <p class="card-text">
@@ -283,12 +311,12 @@
                 
                 <!-- CYBR 4360 - FOUNDATIONS OF CYBR - Tool Review -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="cybr4360-2">
                         <h5 class="card-title">Foundations of Cybersecurity  - Tool Review - CYBR 4360</h5>
                         <small class="text-black-50 ">Tool Review: OWASP ZAP Software</small>
                         <div class="card-text">
                             <p>
-                                This is my tool review presentation for OWASP ZAP. OWASP ZAP is a powerful and versatile tool. ZAP plays a vital role in identifying and mitigating security vulnerabilities within web applications. This tool provides a good experience and tools for beginners and professionals. OWASP community is a good resource and provides in depth documentation for web application vulnerabilities.
+                                This is my tool review presentation for OWASP ZAP. OWASP ZAP is a powerful and versatile tool. ZAP plays a vital role in identifying and mitigating security vulnerabilities within web applications. This tool provides good experience and tools for beginners and professionals. OWASP community is a good resource and provides in depth documentation for web application vulnerabilities.
                             </p>
                         </div>
                         <div class="card-text d-flex justify-content-center py-1">
@@ -299,11 +327,11 @@
 
                 <!-- ISQA 4900 - Full Stack -->
                 <div class="card projects__card m-2">
-                    <div class="card-body">
+                    <div class="card-body" id="isqa4900">
                         <h5 class="card-title">Full Stack - ISQA 4900</h5>
                         <small class="text-black-50 ">Technical Skills: Vue, Django, HTML, CSS, JavaScript</small>
                         <p class="card-text">
-                            MavTrack app is an app where the user is able to create a training plan. MavTrack will recommend a training schedule based on the users response to the questions. The user can view their schedule and mark them complete. The user can increase or decrease the training level. They can also view the progress of their training.
+                            MavTrack app is an app where the user can create a training plan. MavTrack will recommend a training schedule based on the user's response to the questions. The user can view their schedule and mark them completely. The user can increase or decrease the training level. They can also view the progress of their training.
                         </p>
                         <p class="card-text">
                             You can demo the app by logging in with the following credentials:
